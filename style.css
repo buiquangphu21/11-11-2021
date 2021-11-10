@@ -137,6 +137,7 @@ body, html {
 #QRcode{
   padding: 10em;
   z-index: 5;
+   cursor: pointer;
 }
 @keyframes sendZoomRose{
     0% {opacity: 0%;}
