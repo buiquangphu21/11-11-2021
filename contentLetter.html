@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8">
+        <title>Gửi gắm tâm thư</title>
+        <meta name="viewport" content="width=device-width, initial-scale = 1">
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="https://scontent.fsgn5-11.fna.fbcdn.net/v/t1.6435-1/p320x320/152231505_1401686243509523_5347496567101372926_n.jpg?_nc_cat=111&ccb=1-5&_nc_sid=7206a8&_nc_ohc=e-ulp-bcPqAAX8zv-wd&_nc_ht=scontent.fsgn5-11.fna&oh=2ab70245e185b259d1d22fa995f91a2a&oe=61AAE836" type="image/icon type">
+        <script>
+            function callHim(){
+                var temp = document.getElementById('contentLetter');
+                var front = document.getElementById('frontLetter');
+                var back = document.getElementById('backLetter');
+                temp.style.transition = '5s';
+                temp.removeChild(front);                
+                temp.style.transform = 'rotateY(360deg)';    
+                document.getElementById('imgMeLetter').style.opacity = '100%';
+                document.getElementById('imgYouLetter').style.opacity = '100%';
+                setTimeout(function(){
+                    back.style.visibility = 'visible';
+                }, 2300);            
+                setTimeout(function(){
+                    window.location = 'QR.html'; 
+                }, 10000);
+                // setTimeout(function(){
+                //     window.location.replace('https://www.facebook.com/quang.phu21');                
+                // }, 10000);
+                //window.open('https://meet.google.com/', '_blank'); 
+                //window.location.replace('https://www.facebook.com/quang.phu21');
+            }
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <!-- <audio controls autoplay loop style="visibility: hidden; position: absolute;">
+                <source src="LienQuanMobile.mp3.ogg" type="audio/ogg">
+            </audio> -->
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Mgn5vGo8-6s?autoplay=1&start=6&autoplay=1&mute=0&controls=0&disablekb=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="shadowcontentLetter">
+            </div>      
+            <img id="imgMeLetter" src="https://scontent.fsgn5-11.fna.fbcdn.net/v/t1.6435-1/p320x320/152231505_1401686243509523_5347496567101372926_n.jpg?_nc_cat=111&ccb=1-5&_nc_sid=7206a8&_nc_ohc=e-ulp-bcPqAAX8zv-wd&_nc_ht=scontent.fsgn5-11.fna&oh=2ab70245e185b259d1d22fa995f91a2a&oe=61AAE836">                
+            <img id="imgYouLetter" src="https://scontent.fsgn5-11.fna.fbcdn.net/v/t1.6435-1/p320x320/152231505_1401686243509523_5347496567101372926_n.jpg?_nc_cat=111&ccb=1-5&_nc_sid=7206a8&_nc_ohc=e-ulp-bcPqAAX8zv-wd&_nc_ht=scontent.fsgn5-11.fna&oh=2ab70245e185b259d1d22fa995f91a2a&oe=61AAE836">                
+            <div class="contentLetter" id="contentLetter">
+                <div id="frontLetter">
+                    <h1 style="padding-left: 0.5em;">Câu đầu tiên anh sẽ viết</h1>
+                    <h3>
+                        Alibaba bán cà rem ở sa mạc Sahara Sahara Sahara Sahara
+                        Sahara Sahara Sahara Sahara Sahara Sahara Sahara Sahara Sahara
+                        Sahara Sahara Sahara Sahara Sahara Sahara Sahara Sahara Sahara
+                        Sahara Sahara Sahara Sahara Sahara Sahara Sahara Sahara Sahara
+                        Sahara Sahara Sahara Sahara Sahara Sahara Sahara Sahara Sahara
+                        Sahara Sahara Sahara Sahara Sahara Sahara Sahara Sahara Sahara
+                    </h3>
+                    <h3 style="float: right; bottom: 0px; position: absolute; right: 15em;">Một nửa yêu thương</h3>
+                    <img src="rose.jpg" id="roseLetter" onclick="callHim()">
+                    <h3 style="bottom: 0px; position: absolute;">Get it by click it</h3>
+                </div>
+                <div id="backLetter" style="visibility:hidden;">
+                    <h1 style="padding-left: 0.5em;">Câu đầu tiên anh sẽ viết</h1>
+                    <h3>
+                        Nếu em không ngại, anh xin phép mời em cùng ăn tối
+                    </h3>
+                    <h3 style="float: right; bottom: 0px; position: absolute; right: 18px;">Một nửa yêu thương</h3>
+                    <h3 style="bottom: 0px; position: absolute;">Get it by click it</h3>
+                </div>
+            </div>      
+        </div>
+    </body>
+</html>

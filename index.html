@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8">
+        <title>Nơi tình yêu bắt đầu</title>
+        <meta name="viewport" content="width=device-width, initial-scale = 1">
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="https://scontent.fsgn5-11.fna.fbcdn.net/v/t1.6435-1/p320x320/152231505_1401686243509523_5347496567101372926_n.jpg?_nc_cat=111&ccb=1-5&_nc_sid=7206a8&_nc_ohc=e-ulp-bcPqAAX8zv-wd&_nc_ht=scontent.fsgn5-11.fna&oh=2ab70245e185b259d1d22fa995f91a2a&oe=61AAE836" type="image/icon type">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            function fireLove(){
+                var arCp = document.getElementById('arrowCupid');
+                arCp.offsetHeight;
+                arCp.style.animation = "fireLove 4s infinite";
+                // arCp.style.animationTimingFunction = "linear";                
+            }
+            function sendLetter(){
+                var ltLo = document.getElementById('letterLove');
+                ltLo.offsetHeight;
+                ltLo.style.animation = "sendLetter 2s ";
+                ltLo.style.visibility = "hidden";
+                var endPage = document.getElementById("container");
+                endPage.style.animation = "blurEndToLetter 2s";
+                endPage.style.transition = "ease-in-out";
+                setTimeout(function(){
+                    endPage.style.opacity = "20%";                 
+                }, 2000);
+                setTimeout(function(){
+                    window.location="contentLetter.html";                
+                }, 2500);
+                
+                // arCp.style.animationTimingFunction = "linear";                
+            }
+            $(document).ready(function(){
+                    $('#imgMe').hover(function(){
+                        document.getElementById('imgMe').setAttribute('src','cupid.png');//sister image
+                        console.log(1);
+                    });
+                    $('#imgMe').mouseout(function(){
+                        document.getElementById('imgMe').setAttribute('src','https://scontent.fsgn5-11.fna.fbcdn.net/v/t1.6435-1/p320x320/152231505_1401686243509523_5347496567101372926_n.jpg?_nc_cat=111&ccb=1-5&_nc_sid=7206a8&_nc_ohc=e-ulp-bcPqAAX8zv-wd&_nc_ht=scontent.fsgn5-11.fna&oh=2ab70245e185b259d1d22fa995f91a2a&oe=61AAE836');
+                        console.log(1);
+                    });
+                })
+        </script>
+    </head>
+    <body>
+        <div class="container" id="container">
+            <audio controls autoplay loop style="visibility: hidden; position: absolute;">
+                <source src="LienQuanMobile.mp3.ogg" type="audio/ogg">
+            </audio>
+            <img id="imgCupid" src="cupid.png" onclick="fireLove()">
+            <img id="arrowCupid" src="arrowCupid.png">
+            <img id="imgMe" src="https://scontent.fsgn5-11.fna.fbcdn.net/v/t1.6435-1/p320x320/152231505_1401686243509523_5347496567101372926_n.jpg?_nc_cat=111&ccb=1-5&_nc_sid=7206a8&_nc_ohc=e-ulp-bcPqAAX8zv-wd&_nc_ht=scontent.fsgn5-11.fna&oh=2ab70245e185b259d1d22fa995f91a2a&oe=61AAE836">
+            <img id="imgYou" src="https://scontent.fsgn5-11.fna.fbcdn.net/v/t1.6435-1/p320x320/152231505_1401686243509523_5347496567101372926_n.jpg?_nc_cat=111&ccb=1-5&_nc_sid=7206a8&_nc_ohc=e-ulp-bcPqAAX8zv-wd&_nc_ht=scontent.fsgn5-11.fna&oh=2ab70245e185b259d1d22fa995f91a2a&oe=61AAE836">
+            <img id="letterLove" src="letterLove.jpg" onclick="sendLetter()">
+        </div>
+    </body>
+</html>
