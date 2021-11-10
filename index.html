@@ -2,57 +2,147 @@
 <html lang="vi">
     <head>
         <meta charset="UTF-8">
-        <title>Nơi tình yêu bắt đầu</title>
+        <title>Gửi gắm tâm thư</title>
         <meta name="viewport" content="width=device-width, initial-scale = 1">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="newstyle.css">
         <link rel="icon" href="https://scontent.fsgn5-11.fna.fbcdn.net/v/t1.6435-1/p320x320/152231505_1401686243509523_5347496567101372926_n.jpg?_nc_cat=111&ccb=1-5&_nc_sid=7206a8&_nc_ohc=e-ulp-bcPqAAX8zv-wd&_nc_ht=scontent.fsgn5-11.fna&oh=2ab70245e185b259d1d22fa995f91a2a&oe=61AAE836" type="image/icon type">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script>
-            function fireLove(){
-                var arCp = document.getElementById('arrowCupid');
-                arCp.offsetHeight;
-                arCp.style.animation = "fireLove 4s infinite";
-                // arCp.style.animationTimingFunction = "linear";                
+            var pageIndex = 1;  
+            document.getElementById('song4').pause();
+            document.getElementById('song5').pause();
+            function callHim(){
+                var temp = document.getElementById('contentLetter');
+                var front = document.getElementById('pageOne');
+                var back = document.getElementById('pageTwo');
+                temp.style.transition = '5s';
+                temp.removeChild(front);                
+                temp.style.transform = 'rotateY(360deg)';    
+                document.getElementById('imgMeLetter').style.opacity = '100%';
+                document.getElementById('imgYouLetter').style.opacity = '100%';
+                setTimeout(function(){
+                    back.style.visibility = 'visible';
+                }, 2300); 
+                setTimeout(function(){
+                    document.getElementById("container").style.opacity = "20%";                 
+                }, 8000);           
+                setTimeout(function(){
+                    window.location = 'QR.html'; 
+                }, 10000);
+                // setTimeout(function(){
+                //     window.location.replace('https://www.facebook.com/quang.phu21');                
+                // }, 10000);
+                //window.open('https://meet.google.com/', '_blank'); 
+                //window.location.replace('https://www.facebook.com/quang.phu21');
             }
-            function sendLetter(){
-                var ltLo = document.getElementById('letterLove');
-                ltLo.offsetHeight;
-                ltLo.style.animation = "sendLetter 2s ";
-                ltLo.style.visibility = "hidden";
-                var endPage = document.getElementById("container");
-                endPage.style.animation = "blurEndToLetter 2s";
-                endPage.style.transition = "ease-in-out";
-                setTimeout(function(){
-                    endPage.style.opacity = "20%";                 
-                }, 2000);
-                setTimeout(function(){
-                    window.location="contentLetter.html";                
-                }, 2500);
+            function changePage(){
+                if (pageIndex < 5){
+                    pageIndex += 1;
+                    if (pageIndex == 2){
+                        var pageOne = document.getElementById('pageOne');
+                        document.getElementById('contentLetter').removeChild(pageOne);
+                        document.getElementById('container').style.backgroundImage = 'url(cupid.jpg)';
+                        document.getElementById('pageTwo').style.visibility = 'visible';
+                    }
+                    else if (pageIndex == 3){
+                        var pageTwo = document.getElementById('pageTwo');
+                        document.getElementById('contentLetter').removeChild(pageTwo);
+                        document.getElementById('container').style.backgroundImage = 'url(pageThree.jpg)';
+                        document.getElementById('pageThree').style.visibility = 'visible';
+                        document.getElementById('nextPage').remove(self);
+                        document.getElementById('clipPageThree').src = 'https://www.youtube.com/embed/Mgn5vGo8-6s?autoplay=1&start=6&mute=0&controls=0&disablekb=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+                        document.getElementById('clipPageThree').load();
+                    }
+                    else if (pageIndex == 4){
+                        var pageThree = document.getElementById('pageThree');
+                        document.getElementById('contentLetter').removeChild(pageThree);
+                        document.getElementById('container').style.backgroundImage = 'url(pageFour.jpg)';
+                        document.getElementById('pageFour').style.visibility = 'visible';
+                        document.getElementById('song4').autoplay = true;
+                        document.getElementById('song4').load();
+                        pageIndex = 5;
+                    }
+                    else if (pageIndex == 5){
+                        var pageFour = document.getElementById('pageFour');
+                        document.getElementById('contentLetter').removeChild(pageFour);
+                        var pageThree = document.getElementById('pageThree');
+                        document.getElementById('contentLetter').removeChild(pageThree);
+                        document.getElementById('container').style.backgroundImage = 'url(pageFive.jpg)';
+                        document.getElementById('pageFive').style.visibility = 'visible';
+                        document.getElementById('song5').autoplay = true;
+                        document.getElementById('song5').load();
+                    }
+                }
                 
-                // arCp.style.animationTimingFunction = "linear";                
             }
-            $(document).ready(function(){
-                    $('#imgMe').hover(function(){
-                        document.getElementById('imgMe').setAttribute('src','z2921619639943_e2fadf0469b81773aca2bea769abc4f5.jpg');//sister image
-                        console.log(1);
-                    });
-                    $('#imgMe').mouseout(function(){
-                        document.getElementById('imgMe').setAttribute('src','https://scontent.fsgn5-11.fna.fbcdn.net/v/t1.6435-1/p320x320/152231505_1401686243509523_5347496567101372926_n.jpg?_nc_cat=111&ccb=1-5&_nc_sid=7206a8&_nc_ohc=e-ulp-bcPqAAX8zv-wd&_nc_ht=scontent.fsgn5-11.fna&oh=2ab70245e185b259d1d22fa995f91a2a&oe=61AAE836');
-                        console.log(1);
-                    });
-                })
+            function acceptLove(){
+                pageIndex += 1;
+                changePage();
+            }
         </script>
     </head>
     <body>
         <div class="container" id="container">
-            <audio controls autoplay loop style="visibility: hidden; position: absolute;">
+            <!-- <audio controls autoplay loop style="visibility: hidden; position: absolute;">
                 <source src="LienQuanMobile.mp3.ogg" type="audio/ogg">
-            </audio>
-            <img id="imgCupid" src="cupid.png" onclick="fireLove()">
-            <img id="arrowCupid" src="arrowCupid.png">
-            <img id="imgMe" src="https://scontent.fsgn5-11.fna.fbcdn.net/v/t1.6435-1/p320x320/152231505_1401686243509523_5347496567101372926_n.jpg?_nc_cat=111&ccb=1-5&_nc_sid=7206a8&_nc_ohc=e-ulp-bcPqAAX8zv-wd&_nc_ht=scontent.fsgn5-11.fna&oh=2ab70245e185b259d1d22fa995f91a2a&oe=61AAE836">
-            <img id="imgYou" src="z2921619639943_e2fadf0469b81773aca2bea769abc4f5.jpg">
-            <img id="letterLove" src="letterLove.jpg" onclick="sendLetter()">
+            </audio> -->
+            <div class="shadowcontentLetter">
+            </div>      
+            <button type="submit" onclick="changePage()" id="nextPage">Đọc tiếp</button>
+            <div class="contentLetter" id="contentLetter">
+                <div id="pageOne">
+                    <img id="imgMeLetter" src="https://scontent.fsgn5-11.fna.fbcdn.net/v/t1.6435-1/p320x320/152231505_1401686243509523_5347496567101372926_n.jpg?_nc_cat=111&ccb=1-5&_nc_sid=7206a8&_nc_ohc=e-ulp-bcPqAAX8zv-wd&_nc_ht=scontent.fsgn5-11.fna&oh=2ab70245e185b259d1d22fa995f91a2a&oe=61AAE836">                
+                    <img id="imgYouLetter" src="z2921619639943_e2fadf0469b81773aca2bea769abc4f5.jpg">                
+        
+                    <h1 style="padding-left: 0.5em;">Lời chào</h1>
+                    <h3>
+                        Alibaba bán cà rem ở sa mạc Sahara Sahara Sahara Sahara
+                        Sahara Sahara Sahara Sahara Sahara Sahara Sahara Sahara Sahara
+                        Sahara Sahara Sahara Sahara Sahara Sahara Sahara Sahara Sahara
+                        Sahara Sahara Sahara Sahara Sahara Sahara Sahara Sahara Sahara
+                        Sahara Sahara Sahara Sahara Sahara Sahara Sahara Sahara Sahara
+                        Sahara Sahara Sahara Sahara Sahara Sahara Sahara Sahara Sahara
+                    </h3>
+                    <h3 style="float: right; bottom: 0px; position: absolute; right: 2em;">Một nửa yêu thương</h3>
+                    <!-- <h3 style="bottom: 0px; position: absolute;">Get it by click it</h3> -->
+                </div>
+                <div id="pageTwo" style="visibility:hidden;">
+                    <h1 style="padding-left: 0.5em;">Cảm ơn người vì đã ở bên tôi</h1>
+                    <h3>
+                        Những ngày qua bla bla bla
+                    </h3>
+                    <h3 style="float: right; bottom: 0px; position: absolute; right: 18px;">Một nửa yêu thương</h3>                    
+                </div>
+                <div id="pageThree" style="visibility:hidden;">
+                    <iframe id="clipPageThree" width="100%" height="100%" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <img id="acceptLove" style="width:10em;" src="acceptLove.png" onclick="acceptLove()">
+                    <img id="dontCry" style="width:10em;" src="dontCry.png" onclick="changePage()">
+                    <!-- <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Mgn5vGo8-6s?autoplay=1&start=6&autoplay=1&mute=0&controls=0&disablekb=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+                </div>
+                <div id="pageFour" style="visibility:hidden;">
+                    <audio id="song4" controls loop style="visibility: hidden; position: absolute;">
+                        <source  src="HotaruNoHikari-IkimonoGakari_xsk7.mp3" type="audio/mp3">
+                    </audio>
+                    <h1 style="padding-left: 0.5em;">Cảm ơn em vì đã đi đến đây</h1>
+                    <h3>
+                        Mặc dù hơi tiếc, nhưng anh nghĩ dù sao đây cũng là quyết định của em. Cảm ơn em một lần nữa vì thời gian quan
+                        đã làm anh vui rất nhiều, chúc em hạnh phúc.
+                    </h3>
+                    <h3 style="float: right; bottom: 0px; position: absolute; right: 18px;">Một người thương em</h3>
+
+                </div>
+                <div id="pageFive" style="visibility:hidden;">
+                    <audio id="song5" controls  loop style="visibility: hidden; position: absolute;">
+                        <source  src="BlueBird-IkimonoGakari-2434308.mp3" type="audio/mp3">
+                    </audio>
+                    <h1 style="padding-left: 0.5em;">Thật tuyệt vời</h1>
+                    <h3>
+                        Cảm xúc anh bây giờ thật khó để diễn tả thành lời, cảm ơn em đã cho anh một cơ hội, cảm ơn em vì đã mang đến một 
+                        luồng gió mới trong cuộc sống tẻ nhạt của anh. Xin cảm ơn em.
+                    </h3>
+                    <h3 style="float: right; bottom: 0px; position: absolute; right: 18px;">Người bạn trai mới của em</h3>
+                    <!-- <h3 style="bottom: 0px; position: absolute;">Get it by click it</h3> -->
+                </div>
+            </div>      
         </div>
     </body>
 </html>
