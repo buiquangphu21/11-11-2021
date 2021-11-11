@@ -102,7 +102,7 @@ body, html {
   }
   @keyframes sendLetter {
     0% {right: 15em; bottom: 15em;transform: rotate(-30deg); visibility: visible;}
-    100% {right: 80%; bottom: 20px; visibility: hidden;}
+    100% {right: 80%; bottom: 0px; visibility: hidden;}
   }
 .contentLetter{
     position: absolute;
@@ -126,12 +126,39 @@ body, html {
   background-color: rgb(255, 255, 255);
   opacity: 28%;
 }
+#pageZero{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  display: flex;
+    justify-content: center;   
+    background-image: url("loveBg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 #imgMe{
     position: absolute;
-    right: 0;
+    right: 0px;
     bottom: 0em;
     width: 20em;
-    height: 25em;
+    height: 100%;
+}
+#imgMeLater{
+  position: absolute;
+  right: 0px;
+  bottom: 0em;
+  width: 20%;
+  height: 100%;
+}
+#imgYou, #imgYouLater{
+    position: absolute;
+    left: 0;
+    bottom: 0em;
+    width: 20em;
+    height: 100%;
 }
 #imgMeLetter{
     position: absolute;
@@ -148,13 +175,6 @@ body, html {
   width: 20em;
   height: 25em;
   opacity: 0%;
-}
-#imgYou{
-    position: absolute;
-    left: 0;
-    bottom: 0em;
-    width: 20em;
-    height: 25em;
 }
 #roseLetter{
     display:flex;

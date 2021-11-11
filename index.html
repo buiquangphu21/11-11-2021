@@ -7,9 +7,34 @@
         <link rel="stylesheet" href="newstyle.css">
         <link rel="icon" href="https://scontent.fsgn5-11.fna.fbcdn.net/v/t1.6435-1/p320x320/152231505_1401686243509523_5347496567101372926_n.jpg?_nc_cat=111&ccb=1-5&_nc_sid=7206a8&_nc_ohc=e-ulp-bcPqAAX8zv-wd&_nc_ht=scontent.fsgn5-11.fna&oh=2ab70245e185b259d1d22fa995f91a2a&oe=61AAE836" type="image/icon type">
         <script>
-            var pageIndex = 1;  
+            var pageIndex = 0;  
             document.getElementById('song4').pause();
             document.getElementById('song5').pause();
+            function sendLetter(){
+                var ltLo = document.getElementById('letterLove');
+                ltLo.offsetHeight;
+                ltLo.style.animation = "sendLetter 2s ";
+                ltLo.style.visibility = "hidden";
+                var endPage = document.getElementById("container");
+                endPage.style.animation = "blurEndToLetter 2s";
+                endPage.style.transition = "ease-in-out";
+                setTimeout(function(){
+                    endPage.style.opacity = "20%";                 
+                }, 2000);
+                setTimeout(function(){
+                    document.getElementById('contentLetter').style.visibility = 'visible';
+                    endPage.style.animation = "appearLetter 2s";      
+                    setTimeout(function(){
+                        endPage.style.opacity ='100%';    
+                    },1900);
+                    document.getElementById('pageZero').removeChild(document.getElementById('imgMe'));
+                    document.getElementById('pageZero').removeChild(document.getElementById('imgYou'));
+                    document.getElementById('nextPage').style.visibility = 'visible';
+                    changePage();
+                }, 2500);
+                
+                // arCp.style.animationTimingFunction = "linear";                
+            }
             function callHim(){
                 var temp = document.getElementById('contentLetter');
                 var front = document.getElementById('pageOne');
@@ -37,7 +62,15 @@
             function changePage(){
                 if (pageIndex < 5){
                     pageIndex += 1;
-                    if (pageIndex == 2){
+                    if (pageIndex == 1){
+                        var pageZero = document.getElementById('pageZero');
+                        document.getElementById('contentLetter').removeChild(pageZero);
+                        var pageOne = document.getElementById('pageOne');
+                        document.getElementById('pageOne').style.visibility = 'visible';
+                        // document.getElementById('contentLetter').removeChild(pageOne);
+                        // document.getElementById('container').style.backgroundImage = 'url(cupid.jpg)';
+                    }
+                    else if (pageIndex == 2){
                         var pageOne = document.getElementById('pageOne');
                         document.getElementById('contentLetter').removeChild(pageOne);
                         document.getElementById('container').style.backgroundImage = 'url(cupid.jpg)';
@@ -87,33 +120,46 @@
             </audio> -->
             <div class="shadowcontentLetter">
             </div>      
-            <button type="submit" onclick="changePage()" id="nextPage">Đọc tiếp</button>
+            <button style="visibility: hidden;" type="submit" onclick="changePage()" id="nextPage">Đọc tiếp</button>
+            <!-- <img id="imgMeLater" style="visibility: hidden;" src="https://scontent.fsgn5-11.fna.fbcdn.net/v/t1.6435-1/p320x320/152231505_1401686243509523_5347496567101372926_n.jpg?_nc_cat=111&ccb=1-5&_nc_sid=7206a8&_nc_ohc=e-ulp-bcPqAAX8zv-wd&_nc_ht=scontent.fsgn5-11.fna&oh=2ab70245e185b259d1d22fa995f91a2a&oe=61AAE836">
+            <img id="imgYouLater" src="z2921619639943_e2fadf0469b81773aca2bea769abc4f5.jpg"> -->
+
             <div class="contentLetter" id="contentLetter">
-                <div id="pageOne" style="height: 0px;">
+                <div id="pageZero">
+                    <!-- <img id="imgCupid" src="cupid.png" onclick="fireLove()"> -->
+                    <!-- <img id="arrowCupid" src="arrowCupid.png"> -->
+                    <img id="imgMe" src="https://scontent.fsgn5-11.fna.fbcdn.net/v/t1.6435-1/p320x320/152231505_1401686243509523_5347496567101372926_n.jpg?_nc_cat=111&ccb=1-5&_nc_sid=7206a8&_nc_ohc=e-ulp-bcPqAAX8zv-wd&_nc_ht=scontent.fsgn5-11.fna&oh=2ab70245e185b259d1d22fa995f91a2a&oe=61AAE836">
+                    <img id="imgYou" src="z2921619639943_e2fadf0469b81773aca2bea769abc4f5.jpg">
+                    <img id="letterLove" src="letterLove.jpg" onclick="sendLetter()">
+                </div>
+                <div id="pageOne" style="height: 0px; visibility: hidden;">
                     <img id="imgMeLetter" src="https://scontent.fsgn5-11.fna.fbcdn.net/v/t1.6435-1/p320x320/152231505_1401686243509523_5347496567101372926_n.jpg?_nc_cat=111&ccb=1-5&_nc_sid=7206a8&_nc_ohc=e-ulp-bcPqAAX8zv-wd&_nc_ht=scontent.fsgn5-11.fna&oh=2ab70245e185b259d1d22fa995f91a2a&oe=61AAE836">                
                     <img id="imgYouLetter" src="z2921619639943_e2fadf0469b81773aca2bea769abc4f5.jpg">                
         
-                    <h1 style="padding-left: 0.5em;">Lời chào</h1>
+                    <h1 style="padding-left: 0.5em;">Hello Trúc,</h1>
                     <h3>
-                        Alibaba bán cà rem ở sa mạc Sahara Sahara Sahara Sahara
-                        Sahara Sahara Sahara Sahara Sahara Sahara Sahara Sahara Sahara
-                        Sahara Sahara Sahara Sahara Sahara Sahara Sahara Sahara Sahara
-                        Sahara Sahara Sahara Sahara Sahara Sahara Sahara Sahara Sahara
-                        Sahara Sahara Sahara Sahara Sahara Sahara Sahara Sahara Sahara
-                        Sahara Sahara Sahara Sahara Sahara Sahara Sahara Sahara Sahara
+                        Đây là những suy nghĩ anh đã cất giấu trong lòng bấy lâu nay. Mong sau khi Trúc đọc được, Trúc sẽ hiểu được phần nào tình cảm của anh dành cho Trúc, giúp chúng ta hiểu rõ nhau nhiều hơn. [3 trái tim]
                     </h3>
                     <h3 style="float: right; bottom: 0px; position: absolute; right: 2em;">Một nửa yêu thương</h3>
                     <!-- <h3 style="bottom: 0px; position: absolute;">Get it by click it</h3> -->
                 </div>
                 <div id="pageTwo" style="visibility:hidden;">
                     <h1 style="padding-left: 0.5em;">Cảm ơn người vì đã ở bên tôi</h1>
-                    <h3>
-                        Những ngày qua bla bla bla
-                    </h3>
+                    <h4>
+                        Từ đó đến giờ, anh là một người không thành công lắm trong chuyện tình cảm của chính bản thân mình. Đã có lúc anh nghĩ con tim anh sẽ không còn rung động vì ai khác, không thể yêu thêm ai nữa. Ngay lúc anh cô đơn nhất, định mệnh đã sắp đặt để Em xuất hiện giúp con tim ấy thêm một lần nữa rung động, tỉnh dậy sau một đợt ngủ đông rất dài. Lần đầu tiên gặp em, anh đã thấy thích cái cách em cười, cái cách em nhìn anh và cả cái cách em nói chuyện. Đó cũng là lần đầu tiên em đã phải làm anh suy nghĩ nhiều về em đến thế. Khi bên cạnh Em, anh thấy mình trở nên yêu đời hơn, cảm thấy mình đang bắt đầu một cuộc sống mới tràn ngập niềm vui và tiếng cười. Cảm ơn Em đã chữa lành con tim anh, cảm ơn Em vì tất cả, và giờ đây anh cảm thấy thật ấm áp mỗi khi có em bên cạnh.
+                    </h4>
                     <h3 style="float: right; bottom: 0px; position: absolute; right: 18px;">Một nửa yêu thương</h3>                    
                 </div>
                 <div id="pageThree" style="visibility:hidden;">
                     <iframe id="clipPageThree" width="100%" height="100%" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <h3 >Chắc có lẽ do ý trời đã khiến Anh cô độc cả 1 thời gian dài để đợi chờ 1 tình yêu và bây giờ tình yêu ấy đã xuất hiện khi em đến. Anh mong rằng qua ngày hôm nay, em sẽ cho anh một cơ hội để có thể chăm sóc em và tiếp tục vun đắp cho tình cảm của chúng ta.
+                    </h3>
+                    <h4 style="float: right;">
+                        Muốn bình yên, lên chùa cầu phúc<br>
+                        Muốn hạnh phúc, làm người yêu anh nha
+                    </h4>
+                    <h4 style="float: right;">
+                    </h4>
                     <img id="acceptLove" style="width:10em;" src="acceptLove.png" onclick="acceptLove()">
                     <img id="dontCry" style="width:10em;" src="dontCry.png" onclick="changePage()">
                     <!-- <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Mgn5vGo8-6s?autoplay=1&start=6&autoplay=1&mute=0&controls=0&disablekb=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
