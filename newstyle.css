@@ -25,7 +25,7 @@ body, html {
     cursor: pointer;
     width: 10em;
     right: 20%;
-    bottom: 0%;
+    bottom: -20%;
     animation: ZigZag 1s infinite;
 }
 #clipPageThree{
@@ -41,7 +41,7 @@ body, html {
     cursor: pointer;
     width: 10em;
     left: 20%;
-    bottom: 0%;
+    bottom: -20%;
 }
 .containerQR{
   display: flex;
@@ -110,7 +110,7 @@ body, html {
     width: 60%;
     height: 60%;
     box-sizing: border-box;
-    padding: 2em 15em 2em 5em;
+    padding: 2em 5em 2em 5em;
     border: 5px ridge rgb(215, 96, 252);
     font-family:cursive ;
     background-color: rgb(255, 255, 255);
