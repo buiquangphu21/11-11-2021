@@ -1,0 +1,200 @@
+body, html {
+    height: 100%;
+    margin: 0;
+  }
+.container{
+    display: flex;
+    justify-content: center;   
+    background-image: url("loveBg.jpg");
+    
+    height:100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#nextPage{
+    background-color: blueviolet;
+    color: white;
+    position: absolute;
+    width: 10em;
+    right: 15%;
+    bottom: 15%;
+}
+#acceptLove{
+  position: absolute;
+    cursor: pointer;
+    width: 10em;
+    right: 20%;
+    bottom: -20%;
+    animation: ZigZag 1s infinite;
+}
+#clipPageThree{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  opacity: 50%;
+}
+#dontCry{
+  position: absolute;
+    cursor: pointer;
+    width: 10em;
+    left: 20%;
+    bottom: -20%;
+}
+.containerQR{
+  display: flex;
+  justify-content: center;   
+  background-image: url("https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=774&q=80");
+  
+  height:100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(208, 126, 216, 0.5);
+}
+#letterLove{
+    position: absolute;
+    cursor: pointer;
+    width: 10em;
+    right: 15em;
+    bottom: 15em;
+    animation: ZigZag 1s infinite;
+}
+@keyframes ZigZag {
+    0% {transform: rotate(-10deg); }
+    50% {transform: rotate(10deg);}
+    100% {transform: rotate(-10deg);}
+  }
+#imgCupid{
+    position: absolute;
+    top: 0em;
+    right: 0;
+    cursor:pointer;
+}
+#arrowCupid{
+    position: absolute;
+    right: 0px;
+    visibility: hidden;
+    transform: rotate(0deg);
+    z-index: 1;
+}
+@keyframes blurEndToLetter {
+    0% {opacity: 100%;}
+    100% {opacity: 20%;}
+  }
+  @keyframes appearLetter {
+    0% {opacity: 10%;}
+    100% {opacity: 100%;}
+  }
+@keyframes fireLove {
+    0% {right: 0px; top: 0px;transform: rotate(-30deg); visibility: visible;}
+    100% {right: 80%; top: 50%; visibility: hidden;}
+  }
+  @keyframes sendLetter {
+    0% {right: 15em; bottom: 15em;transform: rotate(-30deg); visibility: visible;}
+    100% {right: 80%; bottom: 0px; visibility: hidden;}
+  }
+.contentLetter{
+    position: absolute;
+    top: 20%;
+    width: 60%;
+    height: 60%;
+    box-sizing: border-box;
+    padding: 2em 5em 2em 5em;
+    border: 5px ridge rgb(215, 96, 252);
+    font-family:cursive ;
+    background-color: rgb(255, 255, 255);
+    animation: appearLetter 2s;
+}
+.shadowcontentLetter{
+  position: absolute;
+  top: 10%;
+  width: 80%;
+  height: 80%;
+  box-sizing: border-box;
+  border: 5px ridge rgb(215, 96, 252);
+  background-color: rgb(255, 255, 255);
+  opacity: 28%;
+}
+#pageZero{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  display: flex;
+    justify-content: center;   
+    background-image: url("loveBg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#imgMe{
+    position: absolute;
+    right: 0px;
+    bottom: 0em;
+    width: 20em;
+    height: 100%;
+}
+#imgMeLater{
+  position: absolute;
+  right: 0px;
+  bottom: 0em;
+  width: 20%;
+  height: 100%;
+}
+#imgYou, #imgYouLater{
+    position: absolute;
+    left: 0;
+    bottom: 0em;
+    width: 20em;
+    height: 100%;
+}
+#imgMeLetter{
+    position: absolute;
+    right: 20%;
+    top: 30%;
+    width: 20em;
+    height: 20em;
+    opacity: 0%;
+}
+#imgYouLetter{
+  position: absolute;
+  left: 20%;
+  top: 20%;
+  width: 20em;
+  height: 25em;
+  opacity: 0%;
+}
+#roseLetter{
+    display:flex;
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    animation: sendZoomRose 10s ease-in-out;
+    animation-fill-mode: forwards;
+    animation-delay: 0s;
+    right: 0px;
+    bottom: 0px;
+    z-index: 0;
+    cursor: pointer;
+}
+#QRcode{
+  padding: 10em;
+  z-index: 5;
+  cursor: pointer;
+}
+@keyframes sendZoomRose{
+    0% {opacity: 0%;}
+    100% {width: 200px;height: 200px;opacity: 100%;}
+}
